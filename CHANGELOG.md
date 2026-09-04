@@ -16,5 +16,5 @@ First release.
 | Links | Prompts are percent encoded and shortened to fit both the composer limit and the Windows command line ceiling, cut on whole characters |
 | Icon | A typographic asterisk from Google's Material Symbols, in a light and a dark variant that follow the PowerToys theme |
 | Warning | An activation command ending in a letter hides other plugins from ordinary words, so a query where that happens shows one result naming the command to use instead |
-| Build | Reproducible: the same commit yields the same bytes on any machine |
+| Build | Deterministic: no build machine path reaches the output, and the same commit and SDK yield the same bytes |
 | Architectures | x64 and ARM64 |

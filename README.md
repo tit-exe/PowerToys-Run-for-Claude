@@ -226,7 +226,7 @@ dotnet test NewChatForClaude.sln -c Release /p:Platform=x64
 
 The build treats warnings as errors and runs the .NET analyzers in `Recommended` mode. Five PowerToys assemblies are compile time references only; PowerToys ships them itself, so both scripts remove them from what they copy.
 
-Source paths are normalised out of the output, so the build is reproducible: checking out the tag and building on any machine yields the same bytes as the published archive, which you can check against its `.sha256`.
+Source paths are normalised out of the output and the compiler runs deterministically, so the same commit built with the same SDK version yields the same bytes twice. Every archive ships a `.sha256` next to it so you can check what you downloaded.
 
 Further reading: [adding a language](docs/LOCALIZATION.md), [cutting a release](docs/RELEASING.md), [the `claude://` routes](https://support.claude.com/en/articles/14729294-open-claude-desktop-with-a-link), [where community plugins are listed](https://github.com/microsoft/PowerToys/blob/main/doc/thirdPartyRunPlugins.md).
 
