@@ -1,0 +1,50 @@
+<Project>
+
+  <PropertyGroup>
+    <Version>1.0.0</Version>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <Platforms>x64;ARM64</Platforms>
+    <PlatformTarget>$(Platform)</PlatformTarget>
+    <UseWPF>true</UseWPF>
+    <LangVersion>latest</LangVersion>
+    <NeutralLanguage>en</NeutralLanguage>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    <AnalysisLevel>latest</AnalysisLevel>
+    <AnalysisMode>Recommended</AnalysisMode>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+
+    <!--
+      IDE0005 only reports an unused using when a documentation file is produced. The
+      file lands next to the assembly and the packaging scripts drop it, so it never
+      reaches the plugin folder. CS1591 is off because not every member needs a comment.
+    -->
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <!--
+      Rewrites the build machine's paths out of the assembly. Two things bake them in
+      otherwise: the debug directory, which records where the symbol file was written,
+      and the PowerToys logging helpers, whose CallerFilePath parameter makes the
+      compiler emit the full source path as a literal at every call site. Both would
+      ship the folder the plugin happened to be built in.
+    -->
+    <PathMap>$(MSBuildThisFileDirectory)=/_/</PathMap>
+
+    <!--
+      The symbol file keeps a source map of its own, keyed by the folder the build ran
+      in. This normalizes that key too, so the same commit produces the same bytes on
+      any machine.
+    -->
+    <DeterministicSourcePaths>true</DeterministicSourcePaths>
+  </PropertyGroup>
+
+</Project>

@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <IsPackable>false</IsPackable>
+
+    <!-- Test names are written as sentences, so the underscores are deliberate. -->
+    <NoWarn>$(NoWarn);CA1707</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MSTest" Version="3.9.3" />
+
+    <!--
+      PowerToys provides these to its plugins at run time, so the plugin itself does
+      not reference them. A test host has to supply them or Wox.Plugin throws the
+      moment a Result is built or a line is logged.
+    -->
+    <PackageReference Include="Testably.Abstractions.FileSystem.Interface" Version="9.0.0" />
+    <PackageReference Include="System.IO.Abstractions" Version="22.0.13" />
+    <PackageReference Include="NLog" Version="5.3.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Community.PowerToys.Run.Plugin.Claude\Community.PowerToys.Run.Plugin.Claude.csproj" />
+  </ItemGroup>
+
+</Project>

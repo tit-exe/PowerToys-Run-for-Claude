@@ -1,0 +1,40 @@
+name: Build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build ${{ matrix.platform }}
+    runs-on: windows-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        platform: [x64, ARM64]
+
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '9.0.x'
+
+      - name: Restore
+        run: dotnet restore NewChatForClaude.sln /p:Platform=${{ matrix.platform }}
+
+      - name: Build
+        run: dotnet build NewChatForClaude.sln -c Release --no-restore /p:Platform=${{ matrix.platform }}
+
+      # The runner is x64, so the ARM64 test assemblies cannot be executed here.
+      - name: Test
+        if: matrix.platform == 'x64'
+        run: dotnet test NewChatForClaude.sln -c Release --no-build /p:Platform=${{ matrix.platform }}

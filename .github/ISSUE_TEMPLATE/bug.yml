@@ -1,0 +1,40 @@
+name: Bug report
+description: Something does not work as described.
+labels: [bug]
+body:
+  - type: input
+    id: plugin-version
+    attributes:
+      label: Plugin version
+      placeholder: 1.0.0
+    validations:
+      required: true
+  - type: input
+    id: powertoys-version
+    attributes:
+      label: PowerToys version
+      placeholder: 0.97.2
+    validations:
+      required: true
+  - type: dropdown
+    id: destination
+    attributes:
+      label: Destination setting
+      options:
+        - The Claude app
+        - The default browser
+        - Both, the app first
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What you typed, what you expected, and what you got instead.
+    validations:
+      required: true
+  - type: input
+    id: language
+    attributes:
+      label: Windows display language
+      placeholder: English (United States)

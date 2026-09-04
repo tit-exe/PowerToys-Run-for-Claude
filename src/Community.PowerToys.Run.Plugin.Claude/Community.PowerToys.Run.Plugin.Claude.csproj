@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <AssemblyTitle>New Chat for Claude</AssemblyTitle>
+    <Description>Open a new Claude conversation from PowerToys Run.</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Community.PowerToys.Run.Plugin.Dependencies" Version="0.97.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- The tests read the string table to check it against Strings.json. -->
+    <InternalsVisibleTo Include="Community.PowerToys.Run.Plugin.Claude.UnitTests" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Every translation, embedded so the plugin stays a single assembly. -->
+    <EmbeddedResource Include="Strings.json" />
+
+    <None Include="plugin.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\*.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

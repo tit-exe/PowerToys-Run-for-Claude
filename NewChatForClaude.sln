@@ -1,0 +1,37 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35506.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Community.PowerToys.Run.Plugin.Claude", "src\Community.PowerToys.Run.Plugin.Claude\Community.PowerToys.Run.Plugin.Claude.csproj", "{E287131D-B132-45E1-A98D-8A2357721968}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Community.PowerToys.Run.Plugin.Claude.UnitTests", "src\Community.PowerToys.Run.Plugin.Claude.UnitTests\Community.PowerToys.Run.Plugin.Claude.UnitTests.csproj", "{81B658E3-CE98-488D-897C-6B87E108A317}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|ARM64 = Debug|ARM64
+		Debug|x64 = Debug|x64
+		Release|ARM64 = Release|ARM64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E287131D-B132-45E1-A98D-8A2357721968}.Debug|ARM64.ActiveCfg = Debug|ARM64
+		{E287131D-B132-45E1-A98D-8A2357721968}.Debug|ARM64.Build.0 = Debug|ARM64
+		{E287131D-B132-45E1-A98D-8A2357721968}.Debug|x64.ActiveCfg = Debug|x64
+		{E287131D-B132-45E1-A98D-8A2357721968}.Debug|x64.Build.0 = Debug|x64
+		{E287131D-B132-45E1-A98D-8A2357721968}.Release|ARM64.ActiveCfg = Release|ARM64
+		{E287131D-B132-45E1-A98D-8A2357721968}.Release|ARM64.Build.0 = Release|ARM64
+		{E287131D-B132-45E1-A98D-8A2357721968}.Release|x64.ActiveCfg = Release|x64
+		{E287131D-B132-45E1-A98D-8A2357721968}.Release|x64.Build.0 = Release|x64
+		{81B658E3-CE98-488D-897C-6B87E108A317}.Debug|ARM64.ActiveCfg = Debug|ARM64
+		{81B658E3-CE98-488D-897C-6B87E108A317}.Debug|ARM64.Build.0 = Debug|ARM64
+		{81B658E3-CE98-488D-897C-6B87E108A317}.Debug|x64.ActiveCfg = Debug|x64
+		{81B658E3-CE98-488D-897C-6B87E108A317}.Debug|x64.Build.0 = Debug|x64
+		{81B658E3-CE98-488D-897C-6B87E108A317}.Release|ARM64.ActiveCfg = Release|ARM64
+		{81B658E3-CE98-488D-897C-6B87E108A317}.Release|ARM64.Build.0 = Release|ARM64
+		{81B658E3-CE98-488D-897C-6B87E108A317}.Release|x64.ActiveCfg = Release|x64
+		{81B658E3-CE98-488D-897C-6B87E108A317}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,15 @@
+{
+  "ID": "F05FADA4EC2C42B088986DA0500C25EF",
+  "ActionKeyword": "cl:",
+  "IsGlobal": false,
+  "Name": "New Chat for Claude",
+  "Author": "tit-exe",
+  "Version": "1.0.0",
+  "Language": "csharp",
+  "Website": "https://github.com/tit-exe/PowerToys-Run-for-Claude",
+  "Description": "Start a Claude conversation",
+  "ExecuteFileName": "Community.PowerToys.Run.Plugin.Claude.dll",
+  "IcoPathDark": "Images\\newchat.dark.png",
+  "IcoPathLight": "Images\\newchat.light.png",
+  "DynamicLoading": false
+}
